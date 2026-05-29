@@ -63,7 +63,7 @@ Elastic Beanstalk (EC2)
 
 ### ☁️ Cloud Infrastructure Dashboard
 Built into the app — shows live connection status and performance benchmarks:
-- Real-time latency for RDS, ElastiCache, Redis
+- Real-time latency for RDS, ElastiCache, Amazon MQ
 - **Performance Benchmark**: MySQL direct query vs Redis cache
 - Redis proved **1.6x–2.6x faster** than direct RDS queries
 
@@ -77,38 +77,89 @@ Built into the app — shows live connection status and performance benchmarks:
 
 ## 📸 Screenshots
 
-### Cloud Infrastructure Status
-> Live connections to all AWS services with real-time latency
+### ☁️ Cloud Infrastructure Status — Live Connections
+> Amazon RDS · ElastiCache · Amazon MQ all Online with real-time latency
 
-![Dashboard](screenshots/web4.png)
+![Cloud Infrastructure Status](screenshots/web4.png)
 
-### Available Products
-> Products served from S3 with stock indicators
+### ☁️ Cloud Infrastructure Status — Performance Benchmark
+> Redis is 2.6x Faster than RDS
 
-![Products](screenshots/web2.png)
+![Performance Benchmark](screenshots/web4%20(2).png)
 
-### Seller — Incoming Orders
-![Seller Orders](screenshots/web3.png)
+### 🛍️ Available Products
+> Products with images served from S3 — stock indicators and Buy Now
 
-### Buyer — My Orders
+![Available Products](screenshots/web2.png)
+
+### 📦 Seller — My Products
+> Seller dashboard with product management (Edit / Update / Delete)
+
+![Seller Products](screenshots/web3.png)
+
+### 📋 Seller — Incoming Orders
+> Real-time incoming orders from buyers
+
+![Seller Orders](screenshots/web4.png)
+
+### 🧾 Buyer — My Orders
+> Buyer order history with status tracking
+
 ![Buyer Orders](screenshots/web.png)
 
-### AWS RDS — Available
-![RDS](screenshots/rds__2_.png)
+---
 
-### Amazon MQ — Running (RabbitMQ 3.13)
-![MQ](screenshots/mq.png)
+### 🗄️ AWS RDS — Instance Summary
+> Status: Available · Engine: MySQL Community · Class: db.t3.micro · Region: us-east-1c
 
-### Amazon S3 — 21 Product Images
-![S3](screenshots/s3.png)
+![RDS Summary](screenshots/rds%20(2).png)
 
-### MySQL — Live Data via EC2
-![MySQL](screenshots/rds3.png)
+### 🗄️ AWS RDS — Instance List
+![RDS List](screenshots/rds.png)
 
-### ElastiCache Redis — PING/PONG
-![Redis](screenshots/rds4.png)
+### 🐬 MySQL — Live Query via EC2
+> Connected to RDS from EC2 — SHOW TABLES + SELECT products
 
-### CloudWatch Dashboard
+![MySQL Tables](screenshots/rds3.png)
+
+### ⚡ ElastiCache Redis — PING / PONG
+> Connected to ElastiCache from EC2 — PING → PONG · uptime: 4 days
+
+![Redis PING](screenshots/rds2.png)
+
+### ⚡ ElastiCache Redis — INFO stats
+> total_connections: 142 · commands_processed: 667 · keyspace_hits: 66
+
+![Redis Stats](screenshots/rds4.png)
+
+---
+
+### 🪣 Amazon S3 — Bucket with Full Sidebar
+> mystore-s3-images · 21 product images · Standard storage class
+
+![S3 Full](screenshots/s3_4.png)
+
+### 🪣 Amazon S3 — Bucket View
+![S3 Bucket](screenshots/s3%20(3).png)
+
+### 🪣 Amazon S3 — Bucket (Cropped)
+![S3 Cropped](screenshots/s3%20(2).png)
+
+### 🌐 Amazon S3 — Image Served via Public URL
+> Image accessible directly from S3 URL in browser
+
+![S3 Image](screenshots/s3.png)
+
+---
+
+### 📨 Amazon MQ — Broker Details
+> mystore-MQ · Status: Running · Engine: RabbitMQ 3.13 · Instance: mq.m7g.medium · CloudWatch Logs: Enabled
+
+![Amazon MQ](screenshots/mq.png)
+
+### 📊 CloudWatch Dashboard
+> Custom dashboard: RequestCountPerTarget · DatabaseConnections · CacheHits/Misses
+
 ![CloudWatch](screenshots/cloudwatch.png)
 
 ---
@@ -116,12 +167,36 @@ Built into the app — shows live connection status and performance benchmarks:
 ## 🗄️ Database Schema
 
 ```sql
--- 3 core tables
-ecommerce_db
-├── users      (id, username, email, role, ...)
-├── products   (id, seller_id, name, price, quantity, image_url, category, ...)
-└── orders     (id, buyer_id, product_id, quantity, total, status, ...)
+-- ecommerce_db
+├── users      (id, username, email, role, created_at, ...)
+├── products   (id, seller_id, name, description, price, quantity, image_url, category, created_at, updated_at)
+└── orders     (id, buyer_id, product_id, quantity, total, status, created_at, ...)
 ```
+
+---
+
+## 📈 Performance Results
+
+```
+MySQL (RDS) direct query:   ~13 ms  ████████████████████
+Redis (ElastiCache) cache:   ~5 ms  ████████
+
+🚀 Redis is 2.6x Faster than RDS
+```
+
+---
+
+## 🧱 AWS Services Summary
+
+| Service | Config | Purpose |
+|---------|--------|---------|
+| **Elastic Beanstalk** | EC2 | App hosting & deployment |
+| **RDS MySQL** | db.t3.micro · us-east-1c | Relational database |
+| **ElastiCache Redis** | 7.1.0 · standalone | Caching & sessions |
+| **Amazon MQ** | mq.m7g.medium · RabbitMQ 3.13 | Async message queue |
+| **S3** | Standard · 21 objects | Product image storage |
+| **CloudWatch** | Custom dashboard | Monitoring & metrics |
+| **VPC / Security Groups** | Private subnets | Network isolation |
 
 ---
 
@@ -141,33 +216,8 @@ PYTHONPATH=/var/app/venv/staging-LQM1lest/bin
 
 ---
 
-## 📈 Performance Results
-
-```
-MySQL (RDS) direct query:   ~13 ms
-Redis (ElastiCache) cache:  ~5 ms
-                            ──────────────────────
-                            Redis is 2.6x Faster 🚀
-```
-
----
-
-## 🧱 AWS Services Used
-
-| Service | Purpose |
-|---------|---------|
-| **EC2 / Elastic Beanstalk** | App hosting & deployment |
-| **RDS MySQL (db.t3.micro)** | Relational database |
-| **ElastiCache Redis** | Caching & performance |
-| **Amazon MQ (mq.m7g.medium)** | Async message queue (RabbitMQ 3.13) |
-| **S3** | Product image storage |
-| **CloudWatch** | Monitoring & dashboards |
-| **VPC / Security Groups** | Network isolation |
-
----
-
 ## 👤 Author
 
-**Ahmed Salah**  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/your-profile)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/your-username)
+**Ahmed Salah**
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)]([https://linkedin.com/in/your-profile](https://www.linkedin.com/in/ahmed-salah-466637287/?locale=ar))
+[![GitHub]([https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/your-username](https://github.com/Ahmed-Salah-Ahmed-AbdulHamid))
