@@ -85,77 +85,77 @@ Built into the app — shows live connection status and performance benchmarks:
 ### ☁️ Cloud Infrastructure Status — Performance Benchmark
 > Redis is 2.6x Faster than RDS
 
-![Performance Benchmark](screenshots/web4__2_.png)
+![Performance Benchmark](web4__2_.png)
 
 ### 🛍️ Available Products
 > Products with images served from S3
 
-![Available Products](screenshots/web2.png)
+![Available Products](web2.png)
 
 ### 📦 Seller — My Products
 > Seller dashboard with product management
 
-![Seller Products](screenshots/web3.png)
+![Seller Products](web3.png)
 
 ### 🧾 Buyer — My Orders
 > Buyer order history with status tracking
 
-![Buyer Orders](screenshots/web.png)
+![Buyer Orders](web.png)
 
 ---
 
 ### 🗄️ AWS RDS — Instance Summary
 > Status: Available · Engine: MySQL Community · Class: db.t3.micro · Region: us-east-1c
 
-![RDS Summary](screenshots/rds__2_.png)
+![RDS Summary](rds__2_.png)
 
 ### 🗄️ AWS RDS — Instance List
-![RDS List](screenshots/rds.png)
+![RDS List](rds.png)
 
 ### 🐬 MySQL — Live Query via EC2
 > SHOW TABLES + SELECT products from RDS
 
-![MySQL Tables](screenshots/rds3.png)
+![MySQL Tables](rds3.png)
 
 ### ⚡ ElastiCache Redis — PING / PONG
 > Connected to ElastiCache from EC2 · uptime: 4 days
 
-![Redis PING](screenshots/rds2.png)
+![Redis PING](rds2.png)
 
 ### ⚡ ElastiCache Redis — INFO stats
 > total_connections: 142 · commands_processed: 667 · keyspace_hits: 66
 
-![Redis Stats](screenshots/rds4.png)
+![Redis Stats](rds4.png)
 
 ---
 
 ### 🪣 Amazon S3 — Bucket with Full Sidebar
 > mystore-s3-images · 21 product images · Standard storage class
 
-![S3 Full](screenshots/s3_4.png)
+![S3 Full](s3_4.png)
 
 ### 🪣 Amazon S3 — Bucket View
-![S3 Bucket](screenshots/s3__3_.png)
+![S3 Bucket](s3__3_.png)
 
 ### 🪣 Amazon S3 — Bucket Cropped
-![S3 Cropped](screenshots/s3__2_.png)
+![S3 Cropped](s3__2_.png)
 
 ### 🌐 Amazon S3 — Image Served via Public URL
 > AI-generated art image accessible directly from S3 URL
 
-![S3 Image](screenshots/s3.png)
+![S3 Image](s3.png)
 
 ---
 
 ### 📨 Amazon MQ — Broker Details
 > mystore-MQ · Status: Running · Engine: RabbitMQ 3.13 · Instance: mq.m7g.medium · CloudWatch Logs: Enabled
 
-![Amazon MQ](screenshots/mq.png)
+![Amazon MQ](mq.png)
 
 ### 📊 CloudWatch Dashboard
 > RequestCountPerTarget · DatabaseConnections · CacheHits/Misses
 
-![CloudWatch](screenshots/cloudwatch.png)
+![CloudWatch](cloudwatch.png)
 
 ---
 
