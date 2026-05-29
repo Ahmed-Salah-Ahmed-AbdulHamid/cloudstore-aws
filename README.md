@@ -85,22 +85,17 @@ Built into the app — shows live connection status and performance benchmarks:
 ### ☁️ Cloud Infrastructure Status — Performance Benchmark
 > Redis is 2.6x Faster than RDS
 
-![Performance Benchmark](screenshots/web4%20(2).png)
+![Performance Benchmark](screenshots/web4__2_.png)
 
 ### 🛍️ Available Products
-> Products with images served from S3 — stock indicators and Buy Now
+> Products with images served from S3
 
 ![Available Products](screenshots/web2.png)
 
 ### 📦 Seller — My Products
-> Seller dashboard with product management (Edit / Update / Delete)
+> Seller dashboard with product management
 
 ![Seller Products](screenshots/web3.png)
-
-### 📋 Seller — Incoming Orders
-> Real-time incoming orders from buyers
-
-![Seller Orders](screenshots/web4.png)
 
 ### 🧾 Buyer — My Orders
 > Buyer order history with status tracking
@@ -112,18 +107,18 @@ Built into the app — shows live connection status and performance benchmarks:
 ### 🗄️ AWS RDS — Instance Summary
 > Status: Available · Engine: MySQL Community · Class: db.t3.micro · Region: us-east-1c
 
-![RDS Summary](screenshots/rds%20(2).png)
+![RDS Summary](screenshots/rds__2_.png)
 
 ### 🗄️ AWS RDS — Instance List
 ![RDS List](screenshots/rds.png)
 
 ### 🐬 MySQL — Live Query via EC2
-> Connected to RDS from EC2 — SHOW TABLES + SELECT products
+> SHOW TABLES + SELECT products from RDS
 
 ![MySQL Tables](screenshots/rds3.png)
 
 ### ⚡ ElastiCache Redis — PING / PONG
-> Connected to ElastiCache from EC2 — PING → PONG · uptime: 4 days
+> Connected to ElastiCache from EC2 · uptime: 4 days
 
 ![Redis PING](screenshots/rds2.png)
 
@@ -140,13 +135,13 @@ Built into the app — shows live connection status and performance benchmarks:
 ![S3 Full](screenshots/s3_4.png)
 
 ### 🪣 Amazon S3 — Bucket View
-![S3 Bucket](screenshots/s3%20(3).png)
+![S3 Bucket](screenshots/s3__3_.png)
 
-### 🪣 Amazon S3 — Bucket (Cropped)
-![S3 Cropped](screenshots/s3%20(2).png)
+### 🪣 Amazon S3 — Bucket Cropped
+![S3 Cropped](screenshots/s3__2_.png)
 
 ### 🌐 Amazon S3 — Image Served via Public URL
-> Image accessible directly from S3 URL in browser
+> AI-generated art image accessible directly from S3 URL
 
 ![S3 Image](screenshots/s3.png)
 
@@ -158,7 +153,7 @@ Built into the app — shows live connection status and performance benchmarks:
 ![Amazon MQ](screenshots/mq.png)
 
 ### 📊 CloudWatch Dashboard
-> Custom dashboard: RequestCountPerTarget · DatabaseConnections · CacheHits/Misses
+> RequestCountPerTarget · DatabaseConnections · CacheHits/Misses
 
 ![CloudWatch](screenshots/cloudwatch.png)
 
@@ -192,7 +187,7 @@ Redis (ElastiCache) cache:   ~5 ms  ████████
 |---------|--------|---------|
 | **Elastic Beanstalk** | EC2 | App hosting & deployment |
 | **RDS MySQL** | db.t3.micro · us-east-1c | Relational database |
-| **ElastiCache Redis** | 7.1.0 · standalone | Caching & sessions |
+| **ElastiCache Redis** | v7.1.0 · standalone | Caching & sessions |
 | **Amazon MQ** | mq.m7g.medium · RabbitMQ 3.13 | Async message queue |
 | **S3** | Standard · 21 objects | Product image storage |
 | **CloudWatch** | Custom dashboard | Monitoring & metrics |
@@ -219,5 +214,3 @@ PYTHONPATH=/var/app/venv/staging-LQM1lest/bin
 ## 👤 Author
 
 **Ahmed Salah**
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)]([https://linkedin.com/in/your-profile](https://www.linkedin.com/in/ahmed-salah-466637287/?locale=ar))
-[![GitHub]([https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/your-username](https://github.com/Ahmed-Salah-Ahmed-AbdulHamid))
