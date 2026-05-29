@@ -132,13 +132,13 @@ Built into the app — shows live connection status and performance benchmarks:
 ### 🪣 Amazon S3 — Bucket with Full Sidebar
 > mystore-s3-images · 21 product images · Standard storage class
 
-![S3 Full](s3_4.png)
+![S3 Full](s34.png)
 
 ### 🪣 Amazon S3 — Bucket View
-![S3 Bucket](s3__3_.png)
+![S3 Bucket](s3(3)_.png)
 
 ### 🪣 Amazon S3 — Bucket Cropped
-![S3 Cropped](s3__2_.png)
+![S3 Cropped](s3(2)_.png)
 
 ### 🌐 Amazon S3 — Image Served via Public URL
 > AI-generated art image accessible directly from S3 URL
