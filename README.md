@@ -80,7 +80,7 @@ Built into the app — shows live connection status and performance benchmarks:
 ### ☁️ Cloud Infrastructure Status — Live Connections
 > Amazon RDS · ElastiCache · Amazon MQ all Online with real-time latency
 
-![Cloud Infrastructure Status](screenshots/web4.png)
+![Cloud Infrastructure Status](web4.png)
 
 ### ☁️ Cloud Infrastructure Status — Performance Benchmark
 > Redis is 2.6x Faster than RDS
