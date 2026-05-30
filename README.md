@@ -138,7 +138,7 @@ Built into the app — shows live connection status and performance benchmarks:
 ![S3 Bucket](s3(3)_.png)
 
 ### 🪣 Amazon S3 — Bucket Cropped
-![S3 Cropped](s3(2)_.png)
+![S3 Cropped](s3_2.png)
 
 ### 🌐 Amazon S3 — Image Served via Public URL
 > AI-generated art image accessible directly from S3 URL
