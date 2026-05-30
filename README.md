@@ -85,7 +85,7 @@ Built into the app — shows live connection status and performance benchmarks:
 ### ☁️ Cloud Infrastructure Status — Performance Benchmark
 > Redis is 2.6x Faster than RDS
 
-![Performance Benchmark](web4__2_.png)
+![Performance Benchmark](web4_2.png)
 
 ### 🛍️ Available Products
 > Products with images served from S3
@@ -132,10 +132,10 @@ Built into the app — shows live connection status and performance benchmarks:
 ### 🪣 Amazon S3 — Bucket with Full Sidebar
 > mystore-s3-images · 21 product images · Standard storage class
 
-![S3 Full](s34.png)
+![S3 Full](s3_4.png)
 
 ### 🪣 Amazon S3 — Bucket View
-![S3 Bucket](s3(3)_.png)
+![S3 Bucket](s3_3.png)
 
 ### 🪣 Amazon S3 — Bucket Cropped
 ![S3 Cropped](s3_2.png)
