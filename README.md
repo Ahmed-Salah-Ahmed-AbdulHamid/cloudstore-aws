@@ -107,7 +107,7 @@ Built into the app — shows live connection status and performance benchmarks:
 ### 🗄️ AWS RDS — Instance Summary
 > Status: Available · Engine: MySQL Community · Class: db.t3.micro · Region: us-east-1c
 
-![RDS Summary](rds__2_.png)
+![RDS Summary](rds5_.png)
 
 ### 🗄️ AWS RDS — Instance List
 ![RDS List](rds.png)
